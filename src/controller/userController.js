@@ -1,30 +1,3 @@
-// const teacherModel = require("../model/tecaherModel")
-// const jwt = require("jsonwebtoken")
-
-// const register = async function (req, res) {
-//     try {
-//         let data = req.body
-//         let {name, emailId, password} = data
-//         // if()
-//         let saveData = await teacherModel.create(data)
-//         return res.status(201).send({ status: true, data: saveData })
-//     }
-//     catch (err) {
-//         res.status(500).send({ msg: err.message })
-//     }
-// }
-
-
-// const login = async function (req, res) {
-//     try {
-//         const { email, password } = req.body
-//         const user = await userModel.findOne({ email })
-//     } catch {
-//         return res.status(404).send({ status: false, message: "user is not exists" })
-//     }
-// }
-
-
 const userModel = require("../model/userModel");
 
 const jwt = require("jsonwebtoken");
@@ -115,7 +88,7 @@ const userLogin = async function (req, res) {
             exp: Math.floor(Date.now() / 1000) + 60 * 60
         }
 
-        const token = jwt.sign({ payload }, "created by mohd fayeem");
+        const token = jwt.sign({ payload }, "created by mohammad vaseem");
 
         let userIdAndToken = { userId: checkEmail['_id'], token: token }
         

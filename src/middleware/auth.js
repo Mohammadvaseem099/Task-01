@@ -13,7 +13,7 @@ const Authentication = async (req, res, next) => {
         if (!token) { return res.status(400).send({ status: false, message: "Token must be Present." }) }
         
         //===================== Verify token & asigning it's value in request body =====================//
-        jwt.verify(token, "created by mohd fayeem", function (error, decodedToken) {
+        jwt.verify(token, "created by mohammad vaseem", function (error, decodedToken) {
             if (error) {
                 return res.status(401).send({ status: false, message: "Invalid Token." })
             } else {
